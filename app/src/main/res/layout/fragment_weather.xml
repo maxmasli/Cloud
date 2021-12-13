@@ -29,92 +29,96 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/city_name"
-                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:textColor="@color/dark_gray"
                 android:textSize="40sp"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Moscow" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/temperature"
-                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:textColor="@color/black"
                 android:textSize="60sp"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/city_name"
                 tools:text="25" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/unit"
-                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="@string/c"
                 android:textColor="@color/black"
                 android:textSize="60sp"
+                android:visibility="gone"
                 app:layout_constraintStart_toEndOf="@id/temperature"
                 app:layout_constraintTop_toBottomOf="@id/city_name" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:visibility="gone"
                 android:id="@+id/weather"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:textColor="@color/dark_gray"
                 android:textSize="22sp"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/temperature"
                 tools:text="Snow" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:visibility="gone"
                 android:id="@+id/pressure_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="@string/pressure"
+                android:textColor="@color/black"
                 android:textSize="22sp"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/weather" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:visibility="gone"
                 android:id="@+id/pressure_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:textColor="@color/black"
                 android:textSize="22sp"
+                android:visibility="gone"
                 app:layout_constraintStart_toEndOf="@id/pressure_text"
                 app:layout_constraintTop_toBottomOf="@id/weather"
                 tools:text="1000" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:visibility="gone"
                 android:id="@+id/wind_speed_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="@string/wind_speed"
+                android:textColor="@color/black"
                 android:textSize="22sp"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/pressure_text" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:visibility="gone"
                 android:id="@+id/wind_speed_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:textColor="@color/black"
                 android:textSize="22sp"
+                android:visibility="gone"
                 app:layout_constraintStart_toEndOf="@id/wind_speed_text"
                 app:layout_constraintTop_toBottomOf="@id/pressure_text"
                 tools:text="3" />
@@ -137,6 +141,7 @@
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/city_et"
             android:layout_width="0dp"
+            android:textColor="@color/black"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/city_find_btn"

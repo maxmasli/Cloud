@@ -1,11 +1,12 @@
 package masli.prof.cloud.fragments
 
+import android.app.Activity
 import android.os.Bundle
-import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
@@ -40,6 +41,7 @@ class WeatherFragment : Fragment() {
         weatherViewModel = ViewModelProvider(this).get(WeatherViewModel::class.java)
         findButton.setOnClickListener {
             showShimmer()
+            hideKeyboard()
             val query = cityEditText.text.toString()
             weatherViewModel.fetchData(query)
         }
@@ -51,8 +53,9 @@ class WeatherFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         weatherViewModel.weatherData.observe(viewLifecycleOwner, { data ->
             if(data != null){
+                //TODO подправить шимер он кривой чуток
                 cityNameTextView.text = data.city
-                temperatureTextView.text = WeatherConverter().convertTemperature(data.temperature).toString()
+                temperatureTextView.text = WeatherConverter().convertTemperatureToString(data.temperature)
                 weatherTextView.text = data.weather
                 pressureTextView.text = data.pressure
                 windSpeedTextView.text = data.windSpeed
@@ -74,6 +77,10 @@ class WeatherFragment : Fragment() {
         windSpeedTextTextView = view.findViewById(R.id.wind_speed_text)
         cityEditText = view.findViewById(R.id.city_et)
         findButton = view.findViewById(R.id.city_find_btn)
+    }
+
+    private fun hideKeyboard(){
+        (activity?.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager).hideSoftInputFromWindow(view?.windowToken, 0)
     }
 
     private fun showViews() {
