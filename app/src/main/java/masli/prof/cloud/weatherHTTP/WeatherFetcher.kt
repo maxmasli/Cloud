@@ -1,9 +1,10 @@
-package masli.prof.cloud
+package masli.prof.cloud.weatherHTTP
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.google.gson.GsonBuilder
+import masli.prof.cloud.WeatherData
 import masli.prof.cloud.api.WeatherApi
 import okhttp3.OkHttpClient
 import retrofit2.Call
@@ -21,7 +22,9 @@ class WeatherFetcher {
 
         val retrofit = Retrofit.Builder()
             .baseUrl("https://api.openweathermap.org/data/2.5/")
-            .addConverterFactory(GsonConverterFactory.create(GsonBuilder().registerTypeAdapter(WeatherData::class.java, WeatherJsonConverterFactory()).create()))
+            .addConverterFactory(GsonConverterFactory.create(GsonBuilder().registerTypeAdapter(
+                WeatherData::class.java, WeatherJsonConverterFactory()
+            ).create()))
             .client(client)
             .build()
         weatherApi = retrofit.create(WeatherApi::class.java)

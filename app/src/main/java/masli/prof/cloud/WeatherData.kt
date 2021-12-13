@@ -6,8 +6,4 @@ data class WeatherData(
     val weather: String = "",
     val pressure: String = "",
     val windSpeed: String = ""
-) {
-    fun isNotNull(): Boolean {
-        return city.isNotBlank()
-    }
-}
+)

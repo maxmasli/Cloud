@@ -29,9 +29,10 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/city_name"
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8sp"
+                android:layout_marginStart="8dp"
                 android:textColor="@color/dark_gray"
                 android:textSize="40sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -40,6 +41,7 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/temperature"
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -51,16 +53,18 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/unit"
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/c"
                 android:textColor="@color/black"
                 android:textSize="60sp"
-                android:text="@string/c"
-                android:layout_marginStart="8dp"
-                app:layout_constraintTop_toBottomOf="@id/city_name"
-                app:layout_constraintStart_toEndOf="@id/temperature"/>
+                app:layout_constraintStart_toEndOf="@id/temperature"
+                app:layout_constraintTop_toBottomOf="@id/city_name" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:visibility="gone"
                 android:id="@+id/weather"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -72,6 +76,7 @@
                 tools:text="Snow" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:visibility="gone"
                 android:id="@+id/pressure_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -82,6 +87,7 @@
                 app:layout_constraintTop_toBottomOf="@id/weather" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:visibility="gone"
                 android:id="@+id/pressure_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -92,6 +98,7 @@
                 tools:text="1000" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:visibility="gone"
                 android:id="@+id/wind_speed_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -102,6 +109,7 @@
                 app:layout_constraintTop_toBottomOf="@id/pressure_text" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:visibility="gone"
                 android:id="@+id/wind_speed_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -110,6 +118,18 @@
                 app:layout_constraintStart_toEndOf="@id/wind_speed_text"
                 app:layout_constraintTop_toBottomOf="@id/pressure_text"
                 tools:text="3" />
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <include layout="@layout/shimmer_layout" />
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

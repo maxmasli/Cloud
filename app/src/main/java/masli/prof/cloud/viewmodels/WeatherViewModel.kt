@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import masli.prof.cloud.WeatherData
-import masli.prof.cloud.WeatherFetcher
+import masli.prof.cloud.weatherHTTP.WeatherFetcher
 
 class WeatherViewModel : ViewModel() {
 
